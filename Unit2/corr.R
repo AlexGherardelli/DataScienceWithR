@@ -11,14 +11,18 @@ corr <- function(directory,threshold = 0) {
     tmp <-na.omit(tmp)
     nobs <- nrow(tmp)
     if (nobs > threshold){
-      correlations <- corr(tmp$sulfate, tmp$nitrate)
+      correlations <- cor(tmp$sulfate, tmp$nitrate)
       output <- c(output, correlations)
-    } else{
+    } 
+    else{
       NULL
     }
+  
+  }
+  output
+}
 
-  }
-  }
+corr("testdata")
 
   
   
