@@ -1,14 +1,17 @@
+source("transform_data.R")
+
 # Assignment part 1: Best
 best <- function(state, outcome){
   # read outcome data
-  outcomes[, 11] <- as.numeric(outcomes[,11])
+  outcomes <- transform_data(state, outcome)
 
-  # check that state and outcome are valid
-  if (!(outcome %in% c("heart attack", "heart failure", "pneumonia")) | !(state %in% outcome$State)) {
-    stop("Invalid Outcome")
-  }
+  # # filter out by state
+  by_state <<- subset(outcomes, State == state)
+
+  # sort out columns
+  result <- by_state[order(by_state[, outcome], by_state[, "hospital name"]), ]
   
-
-  # return hospital name with lowest 30-day death
+  # return first hospital name
+  result[1, 1]
   
 }

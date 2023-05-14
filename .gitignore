@@ -93,3 +93,4 @@ rsconnect/
 Unit2/playground.R
 *.csv
 *.Rproj
+Rprof.out

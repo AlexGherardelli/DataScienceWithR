@@ -17,12 +17,5 @@ hospitals <- read.csv("hospital-data.csv", colClasses = "character")
 outcomes[,11] <- as.numeric(outcomes[,11])
 hist(outcomes[,11])
 
-# Assignment part 1: Best
-best <- function(state, outcome){
-  # read outcome data
-  # check that state and outcome are valid
-  # return hospital name with lowest 30-day death
-  
-}
 
 
